@@ -1,0 +1,1964 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jquery/globalize"
+
+    >globalize (v1.2.3)</a>
+</h1>
+<h4>A JavaScript library for internationalization and localization that leverages the official Unicode CLDR JSON data.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.globalize">module globalize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.globalize">
+            function <span class="apidocSignatureSpan"></span>globalize
+            <span class="apidocSignatureSpan">( locale )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._alwaysArray">
+            function <span class="apidocSignatureSpan">globalize.</span>_alwaysArray
+            <span class="apidocSignatureSpan">( stringOrArray )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._createError">
+            function <span class="apidocSignatureSpan">globalize.</span>_createError
+            <span class="apidocSignatureSpan">( code, message, attributes )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._createErrorUnsupportedFeature">
+            function <span class="apidocSignatureSpan">globalize.</span>_createErrorUnsupportedFeature
+            <span class="apidocSignatureSpan">( feature )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._formatMessage">
+            function <span class="apidocSignatureSpan">globalize.</span>_formatMessage
+            <span class="apidocSignatureSpan">( message, data )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._isPlainObject">
+            function <span class="apidocSignatureSpan">globalize.</span>_isPlainObject
+            <span class="apidocSignatureSpan">( obj )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._numberNumberingSystem">
+            function <span class="apidocSignatureSpan">globalize.</span>_numberNumberingSystem
+            <span class="apidocSignatureSpan">( cldr )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._numberPattern">
+            function <span class="apidocSignatureSpan">globalize.</span>_numberPattern
+            <span class="apidocSignatureSpan">( style, cldr )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._numberSymbol">
+            function <span class="apidocSignatureSpan">globalize.</span>_numberSymbol
+            <span class="apidocSignatureSpan">( name, cldr )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._objectExtend">
+            function <span class="apidocSignatureSpan">globalize.</span>_objectExtend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._regexpEscape">
+            function <span class="apidocSignatureSpan">globalize.</span>_regexpEscape
+            <span class="apidocSignatureSpan">( string )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._removeLiteralQuotes">
+            function <span class="apidocSignatureSpan">globalize.</span>_removeLiteralQuotes
+            <span class="apidocSignatureSpan">( string )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._runtimeBind">
+            function <span class="apidocSignatureSpan">globalize.</span>_runtimeBind
+            <span class="apidocSignatureSpan">( args, cldr, fn, runtimeArgs )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._stringPad">
+            function <span class="apidocSignatureSpan">globalize.</span>_stringPad
+            <span class="apidocSignatureSpan">( str, count, right )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validate">
+            function <span class="apidocSignatureSpan">globalize.</span>_validate
+            <span class="apidocSignatureSpan">( code, message, check, attributes )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateCldr">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateCldr
+            <span class="apidocSignatureSpan">( path, value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateDefaultLocale">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateDefaultLocale
+            <span class="apidocSignatureSpan">( value )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterPresence">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterPresence
+            <span class="apidocSignatureSpan">( value, name )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterRange">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterRange
+            <span class="apidocSignatureSpan">( value, name, minimum, maximum )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterType">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterType
+            <span class="apidocSignatureSpan">( value, name, check, expected )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterTypeNumber">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypeNumber
+            <span class="apidocSignatureSpan">( value, name )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterTypePlainObject">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypePlainObject
+            <span class="apidocSignatureSpan">( value, name )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize._validateParameterTypeString">
+            function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypeString
+            <span class="apidocSignatureSpan">( value, name )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.currencyFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>currencyFormatter
+            <span class="apidocSignatureSpan">( currency, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.currencyParser">
+            function <span class="apidocSignatureSpan">globalize.</span>currencyParser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.dateFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>dateFormatter
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.dateParser">
+            function <span class="apidocSignatureSpan">globalize.</span>dateParser
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatCurrency">
+            function <span class="apidocSignatureSpan">globalize.</span>formatCurrency
+            <span class="apidocSignatureSpan">( value, currency, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatDate">
+            function <span class="apidocSignatureSpan">globalize.</span>formatDate
+            <span class="apidocSignatureSpan">( value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatMessage">
+            function <span class="apidocSignatureSpan">globalize.</span>formatMessage
+            <span class="apidocSignatureSpan">( path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatNumber">
+            function <span class="apidocSignatureSpan">globalize.</span>formatNumber
+            <span class="apidocSignatureSpan">( value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatRelativeTime">
+            function <span class="apidocSignatureSpan">globalize.</span>formatRelativeTime
+            <span class="apidocSignatureSpan">( value, unit, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.formatUnit">
+            function <span class="apidocSignatureSpan">globalize.</span>formatUnit
+            <span class="apidocSignatureSpan">( value, unit, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.load">
+            function <span class="apidocSignatureSpan">globalize.</span>load
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.loadMessages">
+            function <span class="apidocSignatureSpan">globalize.</span>loadMessages
+            <span class="apidocSignatureSpan">( json )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.locale">
+            function <span class="apidocSignatureSpan">globalize.</span>locale
+            <span class="apidocSignatureSpan">( locale )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.messageFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>messageFormatter
+            <span class="apidocSignatureSpan">( path )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.numberFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>numberFormatter
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.numberParser">
+            function <span class="apidocSignatureSpan">globalize.</span>numberParser
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.parseCurrency">
+            function <span class="apidocSignatureSpan">globalize.</span>parseCurrency
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.parseDate">
+            function <span class="apidocSignatureSpan">globalize.</span>parseDate
+            <span class="apidocSignatureSpan">( value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.parseNumber">
+            function <span class="apidocSignatureSpan">globalize.</span>parseNumber
+            <span class="apidocSignatureSpan">( value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.plural">
+            function <span class="apidocSignatureSpan">globalize.</span>plural
+            <span class="apidocSignatureSpan">( value, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.pluralGenerator">
+            function <span class="apidocSignatureSpan">globalize.</span>pluralGenerator
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.relativeTimeFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>relativeTimeFormatter
+            <span class="apidocSignatureSpan">( unit, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.globalize.unitFormatter">
+            function <span class="apidocSignatureSpan">globalize.</span>unitFormatter
+            <span class="apidocSignatureSpan">( unit, options )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.globalize" id="apidoc.module.globalize">module globalize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.globalize" id="apidoc.element.globalize.globalize">
+        function <span class="apidocSignatureSpan"></span>globalize
+        <span class="apidocSignatureSpan">( locale )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Globalize( locale ) {
+	if ( !( this instanceof Globalize ) ) {
+		return new Globalize( locale );
+	}
+
+	validateParameterPresence( locale, &#x22;locale&#x22; );
+	validateParameterTypeLocale( locale, &#x22;locale&#x22; );
+
+	this.cldr = alwaysCldr( locale );
+
+	validateLikelySubtags( this.cldr );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._alwaysArray" id="apidoc.element.globalize._alwaysArray">
+        function <span class="apidocSignatureSpan">globalize.</span>_alwaysArray
+        <span class="apidocSignatureSpan">( stringOrArray )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_alwaysArray = function ( stringOrArray ) {
+	return Array.isArray( stringOrArray ) ? stringOrArray : stringOrArray ? [ stringOrArray ] : [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._createError" id="apidoc.element.globalize._createError">
+        function <span class="apidocSignatureSpan">globalize.</span>_createError
+        <span class="apidocSignatureSpan">( code, message, attributes )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createError = function ( code, message, attributes ) {
+	var error;
+
+	message = code + ( message ? &#x22;: &#x22; + formatMessage( message, attributes ) : &#x22;&#x22; );
+	error = new Error( message );
+	error.code = code;
+
+	objectExtend( error, attributes );
+
+	return error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._createErrorUnsupportedFeature" id="apidoc.element.globalize._createErrorUnsupportedFeature">
+        function <span class="apidocSignatureSpan">globalize.</span>_createErrorUnsupportedFeature
+        <span class="apidocSignatureSpan">( feature )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createErrorUnsupportedFeature = function ( feature ) {
+	return createError( &#x22;E_UNSUPPORTED&#x22;, &#x22;Unsupported {feature}.&#x22;, {
+		feature: feature
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._formatMessage" id="apidoc.element.globalize._formatMessage">
+        function <span class="apidocSignatureSpan">globalize.</span>_formatMessage
+        <span class="apidocSignatureSpan">( message, data )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatMessage = function ( message, data ) {
+
+	// Replace {attribute}&#x27;s
+	message = message.replace( /{[0-9a-zA-Z-_. ]+}/g, function( name ) {
+		name = name.replace( /^{([^}]*)}$/, &#x22;$1&#x22; );
+		return toString( data[ name ] );
+	});
+
+	return message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._isPlainObject" id="apidoc.element.globalize._isPlainObject">
+        function <span class="apidocSignatureSpan">globalize.</span>_isPlainObject
+        <span class="apidocSignatureSpan">( obj )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isPlainObject = function ( obj ) {
+	return obj !== null &#x26;&#x26; &#x22;&#x22; + obj === &#x22;[object Object]&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._numberNumberingSystem" id="apidoc.element.globalize._numberNumberingSystem">
+        function <span class="apidocSignatureSpan">globalize.</span>_numberNumberingSystem
+        <span class="apidocSignatureSpan">( cldr )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_numberNumberingSystem = function ( cldr ) {
+	var nu = cldr.attributes[ &#x22;u-nu&#x22; ];
+
+	if ( nu ) {
+		if ( nu === &#x22;traditio&#x22; ) {
+			nu = &#x22;traditional&#x22;;
+		}
+		if ( [ &#x22;native&#x22;, &#x22;traditional&#x22;, &#x22;finance&#x22; ].indexOf( nu ) !== -1 ) {
+
+			// Unicode locale extension `u-nu` is set using either (native, traditional or
+			// finance). So, lookup the respective locale&#x27;s numberingSystem and return it.
+			return cldr.main([ &#x22;numbers/otherNumberingSystems&#x22;, nu ]);
+		}
+
+		// Unicode locale extension `u-nu` is set with an explicit numberingSystem. Return it.
+		return nu;
+	}
+
+	// Return the default numberingSystem.
+	return cldr.main( &#x22;numbers/defaultNumberingSystem&#x22; );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._numberPattern" id="apidoc.element.globalize._numberPattern">
+        function <span class="apidocSignatureSpan">globalize.</span>_numberPattern
+        <span class="apidocSignatureSpan">( style, cldr )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_numberPattern = function ( style, cldr ) {
+	if ( style !== &#x22;decimal&#x22; &#x26;&#x26; style !== &#x22;percent&#x22; ) {
+		throw new Error( &#x22;Invalid style&#x22; );
+	}
+
+	return cldr.main([
+		&#x22;numbers&#x22;,
+		style + &#x22;Formats-numberSystem-&#x22; + numberNumberingSystem( cldr ),
+		&#x22;standard&#x22;
+	]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._numberSymbol" id="apidoc.element.globalize._numberSymbol">
+        function <span class="apidocSignatureSpan">globalize.</span>_numberSymbol
+        <span class="apidocSignatureSpan">( name, cldr )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_numberSymbol = function ( name, cldr ) {
+	return cldr.main([
+		&#x22;numbers/symbols-numberSystem-&#x22; + numberNumberingSystem( cldr ),
+		name
+	]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._objectExtend" id="apidoc.element.globalize._objectExtend">
+        function <span class="apidocSignatureSpan">globalize.</span>_objectExtend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_objectExtend = function () {
+	var destination = arguments[ 0 ],
+		sources = [].slice.call( arguments, 1 );
+
+	sources.forEach(function( source ) {
+		var prop;
+		for ( prop in source ) {
+			destination[ prop ] = source[ prop ];
+		}
+	});
+
+	return destination;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._regexpEscape" id="apidoc.element.globalize._regexpEscape">
+        function <span class="apidocSignatureSpan">globalize.</span>_regexpEscape
+        <span class="apidocSignatureSpan">( string )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_regexpEscape = function ( string ) {
+	return string.replace( /([.*+?^=!:${}()|\[\]\/\\])/g, &#x22;\\$1&#x22; );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._removeLiteralQuotes" id="apidoc.element.globalize._removeLiteralQuotes">
+        function <span class="apidocSignatureSpan">globalize.</span>_removeLiteralQuotes
+        <span class="apidocSignatureSpan">( string )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeLiteralQuotes = function ( string ) {
+	if ( string[ 0 ] + string[ string.length - 1 ] !== &#x22;&#x27;&#x27;&#x22; ) {
+		return string;
+	}
+	if ( string === &#x22;&#x27;&#x27;&#x22; ) {
+		return &#x22;&#x22;;
+	}
+	return string.replace( /&#x27;&#x27;/g, &#x22;&#x27;&#x22; ).slice( 1, -1 );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._runtimeBind" id="apidoc.element.globalize._runtimeBind">
+        function <span class="apidocSignatureSpan">globalize.</span>_runtimeBind
+        <span class="apidocSignatureSpan">( args, cldr, fn, runtimeArgs )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_runtimeBind = function ( args, cldr, fn, runtimeArgs ) {
+
+	var argsStr = JSON.stringify( args ),
+		fnName = functionName( fn ),
+		locale = cldr.locale;
+
+	// If name of the function is not available, this is most likely due uglification,
+	// which most likely means we are in production, and runtimeBind here is not necessary.
+	if ( !fnName ) {
+		return fn;
+	}
+
+	fn.runtimeKey = runtimeKey( fnName, locale, null, argsStr );
+
+	fn.generatorString = function() {
+		return &#x22;Globalize(\&#x22;&#x22; + locale + &#x22;\&#x22;).&#x22; + fnName + &#x22;(&#x22; + argsStr.slice( 1, -1 ) + &#x22;)&#x22;;
+	};
+
+	fn.runtimeArgs = runtimeArgs;
+
+	return fn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._stringPad" id="apidoc.element.globalize._stringPad">
+        function <span class="apidocSignatureSpan">globalize.</span>_stringPad
+        <span class="apidocSignatureSpan">( str, count, right )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_stringPad = function ( str, count, right ) {
+	var length;
+	if ( typeof str !== &#x22;string&#x22; ) {
+		str = String( str );
+	}
+	for ( length = str.length; length &#x3c; count; length += 1 ) {
+		str = ( right ? ( str + &#x22;0&#x22; ) : ( &#x22;0&#x22; + str ) );
+	}
+	return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validate" id="apidoc.element.globalize._validate">
+        function <span class="apidocSignatureSpan">globalize.</span>_validate
+        <span class="apidocSignatureSpan">( code, message, check, attributes )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validate = function ( code, message, check, attributes ) {
+	if ( !check ) {
+		throw createError( code, message, attributes );
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateCldr" id="apidoc.element.globalize._validateCldr">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateCldr
+        <span class="apidocSignatureSpan">( path, value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateCldr = function ( path, value, options ) {
+	var skipBoolean;
+	options = options || {};
+
+	skipBoolean = alwaysArray( options.skip ).some(function( pathRe ) {
+		return pathRe.test( path );
+	});
+
+	validate( &#x22;E_MISSING_CLDR&#x22;, &#x22;Missing required CLDR content `{path}`.&#x22;, value || skipBoolean, {
+		path: path
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateDefaultLocale" id="apidoc.element.globalize._validateDefaultLocale">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateDefaultLocale
+        <span class="apidocSignatureSpan">( value )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateDefaultLocale = function ( value ) {
+	validate( &#x22;E_DEFAULT_LOCALE_NOT_DEFINED&#x22;, &#x22;Default locale has not been defined.&#x22;,
+		value !== undefined, {} );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterPresence" id="apidoc.element.globalize._validateParameterPresence">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterPresence
+        <span class="apidocSignatureSpan">( value, name )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterPresence = function ( value, name ) {
+	validate( &#x22;E_MISSING_PARAMETER&#x22;, &#x22;Missing required parameter `{name}`.&#x22;,
+		value !== undefined, { name: name });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterRange" id="apidoc.element.globalize._validateParameterRange">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterRange
+        <span class="apidocSignatureSpan">( value, name, minimum, maximum )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterRange = function ( value, name, minimum, maximum ) {
+	validate(
+		&#x22;E_PAR_OUT_OF_RANGE&#x22;,
+		&#x22;Parameter `{name}` has value `{value}` out of range [{minimum}, {maximum}].&#x22;,
+		value === undefined || value &#x3e;= minimum &#x26;&#x26; value &#x3c;= maximum,
+		{
+			maximum: maximum,
+			minimum: minimum,
+			name: name,
+			value: value
+		}
+	);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterType" id="apidoc.element.globalize._validateParameterType">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterType
+        <span class="apidocSignatureSpan">( value, name, check, expected )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterType = function ( value, name, check, expected ) {
+	validate(
+		&#x22;E_INVALID_PAR_TYPE&#x22;,
+		&#x22;Invalid `{name}` parameter ({value}). {expected} expected.&#x22;,
+		check,
+		{
+			expected: expected,
+			name: name,
+			value: value
+		}
+	);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterTypeNumber" id="apidoc.element.globalize._validateParameterTypeNumber">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypeNumber
+        <span class="apidocSignatureSpan">( value, name )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterTypeNumber = function ( value, name ) {
+	validateParameterType(
+		value,
+		name,
+		value === undefined || typeof value === &#x22;number&#x22;,
+		&#x22;Number&#x22;
+	);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterTypePlainObject" id="apidoc.element.globalize._validateParameterTypePlainObject">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypePlainObject
+        <span class="apidocSignatureSpan">( value, name )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterTypePlainObject = function ( value, name ) {
+	validateParameterType(
+		value,
+		name,
+		value === undefined || isPlainObject( value ),
+		&#x22;Plain Object&#x22;
+	);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize._validateParameterTypeString" id="apidoc.element.globalize._validateParameterTypeString">
+        function <span class="apidocSignatureSpan">globalize.</span>_validateParameterTypeString
+        <span class="apidocSignatureSpan">( value, name )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateParameterTypeString = function ( value, name ) {
+	validateParameterType(
+		value,
+		name,
+		value === undefined || typeof value === &#x22;string&#x22;,
+		&#x22;a string&#x22;
+	);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.currencyFormatter" id="apidoc.element.globalize.currencyFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>currencyFormatter
+        <span class="apidocSignatureSpan">( currency, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">currencyFormatter = function ( currency, options ) {
+	var args, cldr, numberFormatter, pluralGenerator, properties, returnFn, style;
+
+	validateParameterPresence( currency, &#x22;currency&#x22; );
+	validateParameterTypeCurrency( currency, &#x22;currency&#x22; );
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	cldr = this.cldr;
+	options = options || {};
+
+	args = [ currency, options ];
+	style = options.style || &#x22;symbol&#x22;;
+
+	validateDefaultLocale( cldr );
+
+	// Get properties given style (&#x22;symbol&#x22; default, &#x22;code&#x22; or &#x22;name&#x22;).
+	cldr.on( &#x22;get&#x22;, validateRequiredCldr );
+	properties = ({
+		accounting: currencySymbolProperties,
+		code: currencyCodeProperties,
+		name: currencyNameProperties,
+		symbol: currencySymbolProperties
+	}[ style ] )( currency, cldr, options );
+	cldr.off( &#x22;get&#x22;, validateRequiredCldr );
+
+	// options = options minus style, plus raw pattern.
+	options = objectOmit( options, &#x22;style&#x22; );
+	options.raw = properties.pattern;
+
+	// Return formatter when style is &#x22;symbol&#x22; or &#x22;accounting&#x22;.
+	if ( style === &#x22;symbol&#x22; || style === &#x22;accounting&#x22; ) {
+		numberFormatter = this.numberFormatter( options );
+
+		returnFn = currencyFormatterFn( numberFormatter );
+
+		runtimeBind( args, cldr, returnFn, [ numberFormatter ] );
+
+	// Return formatter when style is &#x22;code&#x22; or &#x22;name&#x22;.
+	} else {
+		numberFormatter = this.numberFormatter( options );
+		pluralGenerator = this.pluralGenerator();
+
+		returnFn = currencyFormatterFn( numberFormatter, pluralGenerator, properties );
+
+		runtimeBind( args, cldr, returnFn, [ numberFormatter, pluralGenerator, properties ] );
+	}
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`.parseNumber( value [, options] )`**
+
+Alias for `.numberParser( [options] )( value )`.
+
+#### Currency module
+
+- **`.<span class="apidocCodeKeywordSpan">currencyFormatter</span>( currency [, options] )`**
+
+Return a function that formats a currency according to the given options or
+locale&#x27;s defaults.
+
+```javascript
+.currencyFormatter( &#x22;USD&#x22; )( 1 )
+// &#x3e; &#x22;$1.00&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.currencyParser" id="apidoc.element.globalize.currencyParser">
+        function <span class="apidocSignatureSpan">globalize.</span>currencyParser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">currencyParser = function () {
+
+	// TODO implement parser.
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.dateFormatter" id="apidoc.element.globalize.dateFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>dateFormatter
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dateFormatter = function ( options ) {
+	var args, cldr, numberFormatters, pad, pattern, properties, returnFn;
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	cldr = this.cldr;
+	options = options || { skeleton: &#x22;yMd&#x22; };
+
+	args = [ options ];
+
+	validateDefaultLocale( cldr );
+
+	cldr.on( &#x22;get&#x22;, validateRequiredCldr );
+	pattern = dateExpandPattern( options, cldr );
+	properties = dateFormatProperties( pattern, cldr );
+	cldr.off( &#x22;get&#x22;, validateRequiredCldr );
+
+	// Create needed number formatters.
+	numberFormatters = properties.numberFormatters;
+	delete properties.numberFormatters;
+	for ( pad in numberFormatters ) {
+		numberFormatters[ pad ] = this.numberFormatter({
+			raw: numberFormatters[ pad ]
+		});
+	}
+
+	returnFn = dateFormatterFn( numberFormatters, properties );
+
+	runtimeBind( args, cldr, returnFn, [ numberFormatters, properties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Read more details about locale at [UTS#35 locale][].
+
+[UTS#35 locale]: http://www.unicode.org/reports/tr35/#Locale
+
+### Date module
+
+- **`.<span class="apidocCodeKeywordSpan">dateFormatter</span>( [options] )`**
+
+Return a function that formats a date according to the given `options`. The default formatting is
+numeric year, month, and day (i.e., `{ skeleton: &#x22;yMd&#x22; }`.
+
+```javascript
+.dateFormatter()( new Date() )
+// &#x3e; &#x22;11/30/2010&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.dateParser" id="apidoc.element.globalize.dateParser">
+        function <span class="apidocSignatureSpan">globalize.</span>dateParser
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dateParser = function ( options ) {
+	var args, cldr, numberParser, parseProperties, pattern, tokenizerProperties, returnFn;
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	cldr = this.cldr;
+	options = options || { skeleton: &#x22;yMd&#x22; };
+
+	args = [ options ];
+
+	validateDefaultLocale( cldr );
+
+	cldr.on( &#x22;get&#x22;, validateRequiredCldr );
+	pattern = dateExpandPattern( options, cldr );
+	tokenizerProperties = dateTokenizerProperties( pattern, cldr );
+	parseProperties = dateParseProperties( cldr );
+	cldr.off( &#x22;get&#x22;, validateRequiredCldr );
+
+	numberParser = this.numberParser({ raw: &#x22;0&#x22; });
+
+	returnFn = dateParserFn( numberParser, parseProperties, tokenizerProperties );
+
+	runtimeBind( args, cldr, returnFn, [ numberParser, parseProperties, tokenizerProperties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+.dateFormatter({ datetime: &#x22;medium&#x22; })( new Date() )
+// &#x3e; &#x22;Nov 1, 2010, 5:55:00 PM&#x22;
+```
+
+[Read more...](doc/api/date/date-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">dateParser</span>( [options] )`**
+
+Return a function that parses a string representing a date into a JavaScript Date object according
+to the given `options`. The default parsing assumes numeric year, month, and day (i.e., `{
+skeleton: &#x22;yMd&#x22; }`).
+
+```javascript
+.dateParser()( &#x22;11/30/2010&#x22; )
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatCurrency" id="apidoc.element.globalize.formatCurrency">
+        function <span class="apidocSignatureSpan">globalize.</span>formatCurrency
+        <span class="apidocSignatureSpan">( value, currency, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatCurrency = function ( value, currency, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeNumber( value, &#x22;value&#x22; );
+
+	return this.currencyFormatter( currency, options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  .currencyFormatter( &#x22;USD&#x22;, { round: &#x22;ceil&#x22; })( 1.491 )
+  // &#x3e; &#x22;$1.50&#x22;
+  ```
+
+  [Read more...](doc/api/currency/currency-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">formatCurrency</span>( value, currency [, options] )`**
+
+  Alias for `.currencyFormatter( currency [, options] )( value )`.
+
+### Plural module
+
+- **`.pluralGenerator( [options] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatDate" id="apidoc.element.globalize.formatDate">
+        function <span class="apidocSignatureSpan">globalize.</span>formatDate
+        <span class="apidocSignatureSpan">( value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatDate = function ( value, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeDate( value, &#x22;value&#x22; );
+
+	return this.dateFormatter( options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    npm install globalize cldr-data
+
+```js
+var Globalize = require( &#x22;globalize&#x22; );
+Globalize.load( require( &#x22;cldr-data&#x22; ).entireSupplemental() );
+Globalize.load( require( &#x22;cldr-data&#x22; ).entireMainFor( &#x22;en&#x22;, &#x22;es&#x22; ) );
+
+Globalize(&#x22;en&#x22;).<span class="apidocCodeKeywordSpan">formatDate</span>(new Date());
+// &#x3e; &#x22;11/27/2015&#x22;
+
+Globalize(&#x22;es&#x22;).formatDate(new Date());
+// &#x3e; &#x22;27/11/2015&#x22;
+```
+
+Note `cldr-data` is an optional module, read [CLDR content](#2-cldr-content) section below for more information on how to get CLDR
+ from different sources.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatMessage" id="apidoc.element.globalize.formatMessage">
+        function <span class="apidocSignatureSpan">globalize.</span>formatMessage
+        <span class="apidocSignatureSpan">( path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatMessage = function ( path) {
+	return this.messageFormatter( path ).apply( {}, slice.call( arguments, 1 ) );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  .messageFormatter( &#x22;like&#x22; )( 3 )
+  // &#x3e; &#x22;You and 2 others liked this&#x22;
+  ```
+
+  [Read more...](doc/api/message/message-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">formatMessage</span>( path [, variables ] )`**
+
+  Alias for `.messageFormatter( path )([ variables ])`.
+
+### Number module
+
+- **`.numberFormatter( [options] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatNumber" id="apidoc.element.globalize.formatNumber">
+        function <span class="apidocSignatureSpan">globalize.</span>formatNumber
+        <span class="apidocSignatureSpan">( value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatNumber = function ( value, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeNumber( value, &#x22;value&#x22; );
+
+	return this.numberFormatter( options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+.numberParser({ style: &#x22;percent&#x22; })( &#x22;50%&#x22; )
+// &#x3e; 0.5
+```
+
+[Read more...](doc/api/number/number-parser.md)
+
+- **`.<span class="apidocCodeKeywordSpan">formatNumber</span>( value [, options] )`**
+
+Alias for `.numberFormatter( [options] )( value )`.
+
+- **`.parseNumber( value [, options] )`**
+
+Alias for `.numberParser( [options] )( value )`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatRelativeTime" id="apidoc.element.globalize.formatRelativeTime">
+        function <span class="apidocSignatureSpan">globalize.</span>formatRelativeTime
+        <span class="apidocSignatureSpan">( value, unit, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatRelativeTime = function ( value, unit, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeNumber( value, &#x22;value&#x22; );
+
+	return this.relativeTimeFormatter( unit, options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  .relativeTimeFormatter( &#x22;month&#x22; )( 3 )
+  // &#x3e; &#x22;in 3 months&#x22;
+  ```
+
+  [Read more...](doc/api/relative-time/relative-time-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">formatRelativeTime</span>( value, unit [, options] )`**
+
+  Alias for `.relativeTimeFormatter( unit, options )( value )`.
+
+## Unit module
+
+- **`.unitFormatter( unit [, options] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.formatUnit" id="apidoc.element.globalize.formatUnit">
+        function <span class="apidocSignatureSpan">globalize.</span>formatUnit
+        <span class="apidocSignatureSpan">( value, unit, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatUnit = function ( value, unit, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeNumber( value, &#x22;value&#x22; );
+
+	return this.unitFormatter( unit, options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  .unitFormatter( &#x22;second&#x22;, { form: &#x22;narrow&#x22; } )( 10 )
+  // &#x3e; &#x22;10s&#x22;
+  ```
+
+  [Read more...](doc/api/unit/unit-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">formatUnit</span>( value, unit [, options] )`**
+
+  Alias for `.unitFormatter( unit, options )( value )`.
+
+## Error reference
+
+### CLDR Errors
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.load" id="apidoc.element.globalize.load">
+        function <span class="apidocSignatureSpan">globalize.</span>load
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function () {
+
+	// validations are delegated to Cldr.load().
+	Cldr.load.apply( Cldr, arguments );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Getting Started
+
+    npm install globalize cldr-data
+
+```js
+var Globalize = require( &#x22;globalize&#x22; );
+Globalize.<span class="apidocCodeKeywordSpan">load</span>( require( &#x22;cldr-data&#x22; ).entireSupplemental() );
+Globalize.load( require( &#x22;cldr-data&#x22; ).entireMainFor( &#x22;en&#x22;, &#x22;es&#x22; ) );
+
+Globalize(&#x22;en&#x22;).formatDate(new Date());
+// &#x3e; &#x22;11/27/2015&#x22;
+
+Globalize(&#x22;es&#x22;).formatDate(new Date());
+// &#x3e; &#x22;27/11/2015&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.loadMessages" id="apidoc.element.globalize.loadMessages">
+        function <span class="apidocSignatureSpan">globalize.</span>loadMessages
+        <span class="apidocSignatureSpan">( json )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadMessages = function ( json ) {
+	var locale,
+		customData = {
+			&#x22;globalize-messages&#x22;: json,
+			&#x22;main&#x22;: {}
+		};
+
+	validateParameterPresence( json, &#x22;json&#x22; );
+	validateParameterTypePlainObject( json, &#x22;json&#x22; );
+
+	// Set available bundles by populating customData main dataset.
+	for ( locale in json ) {
+		if ( json.hasOwnProperty( locale ) ) {
+			customData.main[ locale ] = {};
+		}
+	}
+
+	Cldr.load( customData );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`.parseDate( value [, options] )`**
+
+  Alias for `.dateParser( [options] )( value )`.
+
+### Message module
+
+- **`Globalize.<span class="apidocCodeKeywordSpan">loadMessages</span>( json )`**
+
+  Load messages data.
+
+  [Read more...](doc/api/message/load-messages.md)
+
+- **`.messageFormatter( path ) ➡ function( [variables] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.locale" id="apidoc.element.globalize.locale">
+        function <span class="apidocSignatureSpan">globalize.</span>locale
+        <span class="apidocSignatureSpan">( locale )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">locale = function ( locale ) {
+	validateParameterTypeLocale( locale, &#x22;locale&#x22; );
+
+	if ( arguments.length ) {
+		this.cldr = alwaysCldr( locale );
+		validateLikelySubtags( this.cldr );
+	}
+	return this.cldr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- **`Globalize.load( cldrJSONData, ... )`**
+
+  This method allows you to load CLDR JSON locale data. `Globalize.load()` is a
+  proxy to `Cldr.load()`.
+
+  [Read more...](doc/api/core/load.md)
+
+- **`Globalize.<span class="apidocCodeKeywordSpan">locale</span>( [locale|cldr] )`**
+
+  Set default locale, or get it if locale argument is omitted.
+
+  [Read more...](doc/api/core/locale.md)
+
+- **`[new] Globalize( locale|cldr )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.messageFormatter" id="apidoc.element.globalize.messageFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>messageFormatter
+        <span class="apidocSignatureSpan">( path )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">messageFormatter = function ( path ) {
+	var cldr, formatter, message, pluralGenerator, returnFn,
+		args = slice.call( arguments, 0 );
+
+	validateParameterPresence( path, &#x22;path&#x22; );
+	validateParameterType( path, &#x22;path&#x22;, typeof path === &#x22;string&#x22; || Array.isArray( path ),
+		&#x22;a String nor an Array&#x22; );
+
+	path = alwaysArray( path );
+	cldr = this.cldr;
+
+	validateDefaultLocale( cldr );
+	validateMessageBundle( cldr );
+
+	message = cldr.get( [ &#x22;globalize-messages/{bundle}&#x22; ].concat( path ) );
+	validateMessagePresence( path, message );
+
+	// If message is an Array, concatenate it.
+	if ( Array.isArray( message ) ) {
+		message = message.join( &#x22; &#x22; );
+	}
+	validateMessageType( path, message );
+
+	// Is plural module present? Yes, use its generator. Nope, use an error generator.
+	pluralGenerator = this.plural !== undefined ?
+		this.pluralGenerator() :
+		createErrorPluralModulePresence;
+
+	formatter = new MessageFormat( cldr.locale, pluralGenerator ).compile( message );
+
+	returnFn = messageFormatterFn( formatter );
+
+	runtimeBind( args, cldr, returnFn,
+		[ messageFormatterRuntimeBind( cldr, formatter ), pluralGenerator ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`Globalize.loadMessages( json )`**
+
+Load messages data.
+
+[Read more...](doc/api/message/load-messages.md)
+
+- **`.<span class="apidocCodeKeywordSpan">messageFormatter</span>( path ) ➡ function( [variables] )`**
+
+Return a function that formats a message (using ICU message format pattern)
+given its path and a set of variables into a user-readable string. It supports
+pluralization and gender inflections.
+
+```javascript
+.messageFormatter( &#x22;task&#x22; )( 1000 )
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.numberFormatter" id="apidoc.element.globalize.numberFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>numberFormatter
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numberFormatter = function ( options ) {
+	var args, cldr, pattern, properties, returnFn;
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	options = options || {};
+	cldr = this.cldr;
+
+	args = [ options ];
+
+	validateDefaultLocale( cldr );
+
+	cldr.on( &#x22;get&#x22;, validateCldr );
+
+	if ( options.raw ) {
+		pattern = options.raw;
+	} else {
+		pattern = numberPattern( options.style || &#x22;decimal&#x22;, cldr );
+	}
+
+	properties = numberFormatProperties( pattern, cldr, options );
+
+	cldr.off( &#x22;get&#x22;, validateCldr );
+
+	validateDigits( properties );
+
+	returnFn = numberFormatterFn( properties );
+
+	runtimeBind( args, cldr, returnFn, [ properties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+an order of magnitude more time (more expensive) than execution. In the creation
+phase, Globalize traverses the CLDR tree, processes data (e.g., expands date
+patterns, parses plural rules, etc), and returns a function that actually
+executes the formatting or parsing.
+
+```js
+// Formatter creation.
+var formatter = Globalize.<span class="apidocCodeKeywordSpan">numberFormatter</span>();
+
+// Formatter execution (roughly 10x faster than above).
+formatter( Math.PI );
+// &#x3e; 3.141
+```
+
+As a rule of thumb for optimal performance, cache your formatters and parsers.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.numberParser" id="apidoc.element.globalize.numberParser">
+        function <span class="apidocSignatureSpan">globalize.</span>numberParser
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numberParser = function ( options ) {
+	var args, cldr, pattern, properties, returnFn;
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	options = options || {};
+	cldr = this.cldr;
+
+	args = [ options ];
+
+	validateDefaultLocale( cldr );
+
+	cldr.on( &#x22;get&#x22;, validateCldr );
+
+	if ( options.raw ) {
+		pattern = options.raw;
+	} else {
+		pattern = numberPattern( options.style || &#x22;decimal&#x22;, cldr );
+	}
+
+	properties = numberParseProperties( pattern, cldr, options );
+
+	cldr.off( &#x22;get&#x22;, validateCldr );
+
+	returnFn = numberParserFn( properties );
+
+	runtimeBind( args, cldr, returnFn, [ properties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+.numberFormatter({ style: &#x22;percent&#x22; })( 0.5 )
+// &#x3e; &#x22;50%&#x22;
+```
+
+[Read more...](doc/api/number/number-formatter.md)
+
+- **`.<span class="apidocCodeKeywordSpan">numberParser</span>( [options] )`**
+
+Return a function that parses a string representing a number according to the given options or
+locale&#x27;s defaults.
+
+```javascript
+.numberParser()( &#x22;3.14159&#x22; )
+// &#x3e; 3.14159
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.parseCurrency" id="apidoc.element.globalize.parseCurrency">
+        function <span class="apidocSignatureSpan">globalize.</span>parseCurrency
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseCurrency = function () {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.parseDate" id="apidoc.element.globalize.parseDate">
+        function <span class="apidocSignatureSpan">globalize.</span>parseDate
+        <span class="apidocSignatureSpan">( value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseDate = function ( value, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeString( value, &#x22;value&#x22; );
+
+	return this.dateParser( options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  [Read more...](doc/api/date/date-parser.md)
+
+- **`.formatDate( value [, options] )`**
+
+  Alias for `.dateFormatter( [options] )( value )`.
+
+- **`.<span class="apidocCodeKeywordSpan">parseDate</span>( value [, options] )`**
+
+  Alias for `.dateParser( [options] )( value )`.
+
+### Message module
+
+- **`Globalize.loadMessages( json )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.parseNumber" id="apidoc.element.globalize.parseNumber">
+        function <span class="apidocSignatureSpan">globalize.</span>parseNumber
+        <span class="apidocSignatureSpan">( value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseNumber = function ( value, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeString( value, &#x22;value&#x22; );
+
+	return this.numberParser( options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  [Read more...](doc/api/number/number-parser.md)
+
+- **`.formatNumber( value [, options] )`**
+
+  Alias for `.numberFormatter( [options] )( value )`.
+
+- **`.<span class="apidocCodeKeywordSpan">parseNumber</span>( value [, options] )`**
+
+  Alias for `.numberParser( [options] )( value )`.
+
+#### Currency module
+
+- **`.currencyFormatter( currency [, options] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.plural" id="apidoc.element.globalize.plural">
+        function <span class="apidocSignatureSpan">globalize.</span>plural
+        <span class="apidocSignatureSpan">( value, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">plural = function ( value, options ) {
+	validateParameterPresence( value, &#x22;value&#x22; );
+	validateParameterTypeNumber( value, &#x22;value&#x22; );
+	return this.pluralGenerator( options )( value );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  .pluralGenerator({ type: &#x22;ordinal&#x22; })( 2 )
+  // &#x3e; &#x22;two&#x22;
+  ```
+
+  [Read more...](doc/api/plural/plural-generator.md)
+
+- **`.<span class="apidocCodeKeywordSpan">plural</span>( value[, options ] )`**
+
+  Alias for `.pluralGenerator( [options] )( value )`.
+
+### Relative time module
+
+- **`.relativeTimeFormatter( unit [, options] )`**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.pluralGenerator" id="apidoc.element.globalize.pluralGenerator">
+        function <span class="apidocSignatureSpan">globalize.</span>pluralGenerator
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pluralGenerator = function ( options ) {
+	var args, cldr, isOrdinal, plural, returnFn, type;
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	options = options || {};
+	cldr = this.cldr;
+
+	args = [ options ];
+	type = options.type || &#x22;cardinal&#x22;;
+
+	validateParameterTypePluralType( options.type, &#x22;options.type&#x22; );
+
+	validateDefaultLocale( cldr );
+
+	isOrdinal = type === &#x22;ordinal&#x22;;
+
+	cldr.on( &#x22;get&#x22;, validateCldr );
+	cldr.supplemental([ &#x22;plurals-type-&#x22; + type, &#x22;{language}&#x22; ]);
+	cldr.off( &#x22;get&#x22;, validateCldr );
+
+	MakePlural.rules = {};
+	MakePlural.rules[ type ] = cldr.supplemental( &#x22;plurals-type-&#x22; + type );
+
+	plural = new MakePlural( cldr.attributes.language, {
+		&#x22;ordinals&#x22;: isOrdinal,
+		&#x22;cardinals&#x22;: !isOrdinal
+	});
+
+	returnFn = pluralGeneratorFn( plural );
+
+	runtimeBind( args, cldr, returnFn, [ plural ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`.formatCurrency( value, currency [, options] )`**
+
+Alias for `.currencyFormatter( currency [, options] )( value )`.
+
+### Plural module
+
+- **`.<span class="apidocCodeKeywordSpan">pluralGenerator</span>( [options] )`**
+
+Return a function that returns the value&#x27;s corresponding plural group: `zero`,
+`one`, `two`, `few`, `many`, or `other`.
+
+The function may be used for cardinals or ordinals.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.relativeTimeFormatter" id="apidoc.element.globalize.relativeTimeFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>relativeTimeFormatter
+        <span class="apidocSignatureSpan">( unit, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relativeTimeFormatter = function ( unit, options ) {
+	var args, cldr, numberFormatter, pluralGenerator, properties, returnFn;
+
+	validateParameterPresence( unit, &#x22;unit&#x22; );
+	validateParameterTypeString( unit, &#x22;unit&#x22; );
+
+	cldr = this.cldr;
+	options = options || {};
+
+	args = [ unit, options ];
+
+	validateDefaultLocale( cldr );
+
+	cldr.on( &#x22;get&#x22;, validateCldr );
+	properties = relativeTimeProperties( unit, cldr, options );
+	cldr.off( &#x22;get&#x22;, validateCldr );
+
+	numberFormatter = this.numberFormatter( options );
+	pluralGenerator = this.pluralGenerator();
+
+	returnFn = relativeTimeFormatterFn( numberFormatter, pluralGenerator, properties );
+
+	runtimeBind( args, cldr, returnFn, [ numberFormatter, pluralGenerator, properties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`.plural( value[, options ] )`**
+
+Alias for `.pluralGenerator( [options] )( value )`.
+
+### Relative time module
+
+- **`.<span class="apidocCodeKeywordSpan">relativeTimeFormatter</span>( unit [, options] )`**
+
+ Returns a function that formats a relative time according to the given unit, options, and the
+ default/instance locale.
+
+```javascript
+.relativeTimeFormatter( &#x22;day&#x22; )( 1 )
+// &#x3e; &#x22;tomorrow&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.globalize.unitFormatter" id="apidoc.element.globalize.unitFormatter">
+        function <span class="apidocSignatureSpan">globalize.</span>unitFormatter
+        <span class="apidocSignatureSpan">( unit, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unitFormatter = function ( unit, options ) {
+	var args, form, numberFormatter, pluralGenerator, returnFn, properties;
+
+	validateParameterPresence( unit, &#x22;unit&#x22; );
+	validateParameterTypeString( unit, &#x22;unit&#x22; );
+
+	validateParameterTypePlainObject( options, &#x22;options&#x22; );
+
+	options = options || {};
+
+	args = [ unit, options ];
+	form = options.form || &#x22;long&#x22;;
+	properties = unitProperties( unit, form, this.cldr );
+
+	numberFormatter = options.numberFormatter || this.numberFormatter();
+	pluralGenerator = this.pluralGenerator();
+	returnFn = unitFormatterFn( numberFormatter, pluralGenerator, properties );
+
+	runtimeBind( args, this.cldr, returnFn, [ numberFormatter, pluralGenerator, properties ] );
+
+	return returnFn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- **`.formatRelativeTime( value, unit [, options] )`**
+
+Alias for `.relativeTimeFormatter( unit, options )( value )`.
+
+## Unit module
+
+- **`.<span class="apidocCodeKeywordSpan">unitFormatter</span>( unit [, options] )`**
+
+Returns a function that formats a unit according to the given unit, options, and the
+default/instance locale.
+
+```javascript
+.unitFormatter( &#x22;second&#x22; )( 10 )
+// &#x3e; &#x22;10 seconds&#x22;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
